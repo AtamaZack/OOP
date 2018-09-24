@@ -22,7 +22,11 @@ class Dog():
 			print("{} is not hungry".format(self.dog_name))
 
 	def eat(self):
-		self.is_hungry = False
+		if self.is_hungry == True:
+			self.is_hungry = False
+			return "Dog fed"
+		else:
+			return "Dog already fed"
 
 if __name__ == "__main__":
 	tom = Dog()
@@ -33,6 +37,15 @@ if __name__ == "__main__":
 	fletcher.dog_name = "Fletcher"
 	fletcher.dog_age = 7
 	fletcher.animal_type = "mammal"
+	larry = Dog()
+	larry.dog_name = "Larry"
+	larry.dog_age = 9
+	larry.animal_type = "mammal"
+	my_dogs = Pets()
+	my_dogs.store_pet(tom)
+	my_dogs.store_pet(fletcher)
+	my_dogs.store_pet(larry)
+	my_dogs.walking()
 
 
 
